@@ -1,0 +1,61 @@
+const translations = {
+  lv: { notice:"Elektroinstalācijas darbi Salacgrīvā un Vidzemē", serviceArea:"Apkalpojam Salacgrīvu un Vidzemi", urgencyLabel:"Steidzamība", urgencyNormal:"Plānots darbs", urgencySoon:"Vēlams tuvākajās dienās", urgencyUrgent:"Steidzami — prioritāri", navServices:"Pakalpojumi", navProjects:"Projekti", navAbout:"Par mums", navContact:"Sazināties", kicker:"Elektroinstalācijas darbi Vidzemē", heroTitle:"Droša elektrība.<br><em>Godīgs darbs.</em>", heroLead:"GreenVolt Solution SIA veic elektroinstalācijas darbus privātmājām, dzīvokļiem un uzņēmumiem — no jaunas līnijas līdz pilnai sistēmas izbūvei.", heroButton:"Pieteikt darbu <span>↗</span>", heroSecondary:"Nosūtīt ziņu", factFounded:"Dibināts aprīlī", servicesKicker:"Ko mēs darām", servicesTitle:"Elektroinstalācija,<br><em>kā nākas.</em>", servicesIntro:"Praktiski risinājumi, kvalitatīvi materiāli un sakārtots darbs bez liekiem solījumiem.", service1Title:"Elektroinstalācija", service1Text:"Kabeļu līnijas, sadalnes, rozetes un apgaismojums jaunbūvēs un renovācijas projektos.", service2Title:"Remonts un izbūve", service2Text:"Esošo tīklu pārbaude, defektu novēršana un papildu elektrības pieslēgumi.", service3Title:"Uzņēmumiem", service3Text:"Elektroinstalācijas darbi būvniecības uzņēmumiem, apsaimniekotājiem un ražotnēm.", projectsKicker:"Darba piemēri", projectsTitle:"Rūpīgs darbs<br><em>redzams detaļās.</em>", projectsIntro:"Attēli ilustrē mūsu darba jomu un pieeju: tīras līnijas, droši savienojumi un sakārtota darba vieta.", project1:"Instalācijas izbūve", project2:"Sadalnes montāža", project3:"Apgaismojums", imageNote:"Attēli ir ilustratīvi un nav uzskatāmi par konkrētu GreenVolt Solution objektu fotogrāfijām.", aboutKicker:"Par uzņēmumu", aboutTitle:"Mazs uzņēmums.<br><em>Personīga atbildība.</em>", aboutText:"GreenVolt Solution SIA ir 2026. gada aprīlī dibināts elektroinstalācijas uzņēmums Salacgrīvā. Strādājam rūpīgi, saprotami un ar uzmanību pret katru objektu — gan privātpersonām, gan būvniecības partneriem.", contactKicker:"Sazināsimies", contactTitle:"Ir darbs?<br><em>Parunāsim.</em>", contactText:"Aprakstiet, kas nepieciešams, un sazināsimies, lai vienotos par nākamajiem soļiem.", contactRoute:"Izmantojiet pieteikuma formu", name:"Vārds", email:"E-pasts", message:"Ziņa", send:"Nosūtīt pieteikumu <span>↗</span>" },
+  en: { notice:"Electrical installation in Salacgrīva and Vidzeme", serviceArea:"Serving Salacgrīva and Vidzeme", urgencyLabel:"Urgency", urgencyNormal:"Planned work", urgencySoon:"Within the next few days", urgencyUrgent:"Urgent — priority", navServices:"Services", navProjects:"Projects", navAbout:"About us", navContact:"Contact", kicker:"Electrical installation in Vidzeme", heroTitle:"Safe power.<br><em>Honest work.</em>", heroLead:"GreenVolt Solution SIA provides electrical installation for homes, apartments and businesses — from a single new line to a complete system.", heroButton:"Request a job <span>↗</span>", heroSecondary:"Send a message", factFounded:"Founded in April", servicesKicker:"What we do", servicesTitle:"Electrical work,<br><em>done properly.</em>", servicesIntro:"Practical solutions, quality materials and tidy work without oversized promises.", service1Title:"Electrical installation", service1Text:"Cable runs, distribution boards, sockets and lighting for new builds and renovation projects.", service2Title:"Repairs and upgrades", service2Text:"Existing network checks, fault repairs and additional electrical connections.", service3Title:"For businesses", service3Text:"Electrical installation for construction companies, property managers and production sites.", projectsKicker:"Work examples", projectsTitle:"Careful work<br><em>in the details.</em>", projectsIntro:"These images illustrate our field and approach: clean lines, safe connections and an orderly worksite.", project1:"Installation work", project2:"Panel installation", project3:"Lighting", imageNote:"Images are illustrative and are not photographs of specific GreenVolt Solution projects.", aboutKicker:"About the company", aboutTitle:"Small company.<br><em>Personal responsibility.</em>", aboutText:"GreenVolt Solution SIA is an electrical installation company founded in April 2026 in Salacgrīva. We work carefully, clearly and with attention to every site — for homeowners and construction partners alike.", contactKicker:"Let's talk", contactTitle:"Have a job?<br><em>Let's talk.</em>", contactText:"Tell us what you need and we will get in touch to discuss the next steps.", contactRoute:"Use the enquiry form", name:"Name", email:"Email", message:"Message", send:"Send enquiry <span>↗</span>" },
+  de: { notice:"Elektroinstallationen in Salacgrīva und Vidzeme", serviceArea:"Auch in Deutschland verfügbar — auf Anfrage", urgencyLabel:"Dringlichkeit", urgencyNormal:"Geplante Arbeit", urgencySoon:"In den nächsten Tagen", urgencyUrgent:"Dringend — Priorität", navServices:"Leistungen", navProjects:"Projekte", navAbout:"Über uns", navContact:"Kontakt", kicker:"Elektroinstallationen in Vidzeme", heroTitle:"Sichere Elektrik.<br><em>Ehrliche Arbeit.</em>", heroLead:"GreenVolt Solution SIA übernimmt Elektroinstallationen für Häuser, Wohnungen und Unternehmen — von der einzelnen Leitung bis zum kompletten System.", heroButton:"Arbeit anfragen <span>↗</span>", heroSecondary:"Nachricht senden", factFounded:"Im April gegründet", servicesKicker:"Unser Angebot", servicesTitle:"Elektroarbeit,<br><em>richtig gemacht.</em>", servicesIntro:"Praktische Lösungen, hochwertige Materialien und saubere Arbeit ohne leere Versprechen.", service1Title:"Elektroinstallation", service1Text:"Kabel, Verteiler, Steckdosen und Beleuchtung für Neubauten und Renovierungen.", service2Title:"Reparatur und Ausbau", service2Text:"Prüfung bestehender Netze, Fehlerbehebung und zusätzliche Stromanschlüsse.", service3Title:"Für Unternehmen", service3Text:"Elektroinstallationen für Bauunternehmen, Hausverwaltungen und Produktionsstätten.", projectsKicker:"Arbeitsbeispiele", projectsTitle:"Sorgfältige Arbeit<br><em>im Detail.</em>", projectsIntro:"Die Bilder zeigen beispielhaft unser Fachgebiet und unseren Anspruch: saubere Linien, sichere Verbindungen und Ordnung.", project1:"Installationsarbeiten", project2:"Verteilermontage", project3:"Beleuchtung", imageNote:"Die Bilder dienen zur Veranschaulichung und zeigen keine konkreten Projekte von GreenVolt Solution.", aboutKicker:"Über das Unternehmen", aboutTitle:"Kleines Unternehmen.<br><em>Persönliche Verantwortung.</em>", aboutText:"GreenVolt Solution SIA ist ein im April 2026 in Salacgrīva gegründetes Elektroinstallationsunternehmen. Wir arbeiten sorgfältig, verständlich und aufmerksam — für Privatkunden und Baupartner.", contactKicker:"Kontakt", contactTitle:"Ein Projekt?<br><em>Sprechen wir.</em>", contactText:"Beschreiben Sie Ihr Anliegen und wir melden uns, um die nächsten Schritte zu besprechen.", name:"Name", email:"E-Mail", message:"Nachricht", send:"Anfrage senden <span>↗</span>" },
+  ru: { notice:"Электромонтажные работы в Салацгриве и Видземе", serviceArea:"Работаем в Салацгриве и Видземе", urgencyLabel:"Срочность", urgencyNormal:"Плановая работа", urgencySoon:"В ближайшие дни", urgencyUrgent:"Срочно — приоритет", navServices:"Услуги", navProjects:"Проекты", navAbout:"О компании", navContact:"Контакты", kicker:"Электромонтажные работы в Видземе", heroTitle:"Безопасная электрика.<br><em>Честная работа.</em>", heroLead:"GreenVolt Solution SIA выполняет электромонтажные работы для домов, квартир и бизнеса — от одной линии до полной системы.", heroButton:"Оставить заявку <span>↗</span>", heroSecondary:"Отправить сообщение", factFounded:"Основана в апреле", servicesKicker:"Что мы делаем", servicesTitle:"Электромонтаж,<br><em>как положено.</em>", servicesIntro:"Практичные решения, качественные материалы и аккуратная работа без лишних обещаний.", service1Title:"Электромонтаж", service1Text:"Кабельные линии, распределительные щиты, розетки и освещение в новых и ремонтируемых объектах.", service2Title:"Ремонт и монтаж", service2Text:"Проверка сетей, устранение неисправностей и дополнительные подключения.", service3Title:"Для бизнеса", service3Text:"Электромонтаж для строительных компаний, управляющих и производственных объектов.", projectsKicker:"Примеры работ", projectsTitle:"Аккуратная работа<br><em>видна в деталях.</em>", projectsIntro:"Эти изображения иллюстрируют нашу сферу и подход: чистые линии, безопасные соединения и порядок.", project1:"Монтаж системы", project2:"Монтаж щита", project3:"Освещение", imageNote:"Изображения являются иллюстративными и не показывают конкретные объекты GreenVolt Solution.", aboutKicker:"О компании", aboutTitle:"Небольшая компания.<br><em>Личная ответственность.</em>", aboutText:"GreenVolt Solution SIA — электромонтажная компания, основанная в апреле 2026 года в Салацгриве. Работаем внимательно, понятно и ответственно — для частных клиентов и строительных партнеров.", contactKicker:"Свяжитесь с нами", contactTitle:"Есть работа?<br><em>Поговорим.</em>", contactText:"Расскажите, что необходимо, и мы свяжемся с вами для обсуждения следующих шагов.", name:"Имя", email:"Эл. почта", message:"Сообщение", send:"Отправить заявку <span>↗</span>" }
+};
+
+const language = document.querySelector("#language");
+const electricianImages = [
+  "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1400&q=85",
+  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=85",
+  "https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?auto=format&fit=crop&w=1400&q=85"
+];
+let imageIndex = 0;
+const heroImage = document.querySelector(".hero-image");
+setInterval(() => {
+  imageIndex = (imageIndex + 1) % electricianImages.length;
+  heroImage.style.backgroundImage = `linear-gradient(90deg,var(--green) 0%,transparent 34%),url("${electricianImages[imageIndex]}")`;
+}, 6500);
+const routeLabels = { lv: "Izmantojiet pieteikuma formu", en: "Use the enquiry form", de: "Nutzen Sie das Anfrageformular", ru: "Используйте форму заявки" };
+const setLanguage = (value) => {
+  const dictionary = translations[value] || translations.lv;
+  document.documentElement.lang = value;
+  document.body.classList.remove("theme-lv", "theme-en", "theme-de", "theme-ru");
+  document.body.classList.add(`theme-${value}`);
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const translated = element.dataset.i18n === "contactRoute" ? routeLabels[value] : dictionary[element.dataset.i18n];
+    if (translated) element.innerHTML = translated;
+  });
+  localStorage.setItem("greenvolt-language", value);
+};
+language?.addEventListener("change", (event) => setLanguage(event.target.value));
+const savedLanguage = localStorage.getItem("greenvolt-language") || "lv";
+if (language) language.value = savedLanguage;
+setLanguage(savedLanguage);
+
+const menuButton = document.querySelector(".menu-button");
+const navLinks = document.querySelector(".nav-links");
+menuButton?.addEventListener("click", () => { const open = navLinks.classList.toggle("open"); menuButton.setAttribute("aria-expanded", String(open)); });
+navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => navLinks.classList.remove("open")));
+document.querySelector("#contact-form")?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const form = event.target;
+  const message = form.querySelector(".form-message");
+  const endpoint = window.GREENVOLT_ORDER_ENDPOINT;
+  if (!endpoint) {
+    message.textContent = language.value === "lv" ? "Pieteikums sagatavots. Pievienojiet Supabase endpoint, lai to nosūtītu." : "Request prepared. Add the Supabase endpoint to send it.";
+    return;
+  }
+  message.textContent = "";
+  try {
+    const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(new FormData(form))) });
+    if (!response.ok) throw new Error("Order submission failed");
+    message.textContent = translations[language.value].send.replace(/<[^>]*>/g, "") + " ✓";
+  } catch (error) {
+    message.textContent = language.value === "lv" ? "Neizdevās nosūtīt. Lūdzu, mēģiniet vēlreiz." : "Could not send the request. Please try again.";
+    console.error(error);
+    return;
+  }
+  form.reset();
+});
