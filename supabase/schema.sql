@@ -12,6 +12,6 @@ alter table public.service_orders enable row level security;
 
 create index if not exists service_orders_priority_idx
   on public.service_orders (
-    case urgency when 'urgent' then 1 when 'soon' then 2 else 3 end,
+    (case urgency when 'urgent' then 1 when 'soon' then 2 else 3 end),
     created_at asc
   );
