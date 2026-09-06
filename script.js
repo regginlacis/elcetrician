@@ -6,6 +6,18 @@ const translations = {
 };
 
 const language = document.querySelector("#language");
+const dropdown = document.querySelector(".nav-dropdown");
+const dropdownToggle = document.querySelector(".nav-dropdown-toggle");
+dropdownToggle?.addEventListener("click", () => {
+  const isOpen = dropdown.classList.toggle("open");
+  dropdownToggle.setAttribute("aria-expanded", String(isOpen));
+});
+document.addEventListener("click", (event) => {
+  if (!dropdown.contains(event.target)) {
+    dropdown.classList.remove("open");
+    dropdownToggle.setAttribute("aria-expanded", "false");
+  }
+});
 const electricianImages = [
   "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1400&q=85",
   "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=85",
