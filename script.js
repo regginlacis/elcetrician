@@ -15,7 +15,11 @@ let imageIndex = 0;
 const heroImage = document.querySelector(".hero-image");
 setInterval(() => {
   imageIndex = (imageIndex + 1) % electricianImages.length;
-  heroImage.style.backgroundImage = `linear-gradient(90deg,var(--green) 0%,transparent 34%),url("${electricianImages[imageIndex]}")`;
+  heroImage.classList.add("is-changing");
+  window.setTimeout(() => {
+    heroImage.style.setProperty("--hero-photo", `url("${electricianImages[imageIndex]}")`);
+    requestAnimationFrame(() => heroImage.classList.remove("is-changing"));
+  }, 450);
 }, 6500);
 const routeLabels = { lv: "Izmantojiet pieteikuma formu", en: "Use the enquiry form", de: "Nutzen Sie das Anfrageformular", ru: "Используйте форму заявки" };
 const setLanguage = (value) => {
