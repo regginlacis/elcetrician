@@ -14,21 +14,42 @@ Deno.serve(async (request) => {
     return new Response(JSON.stringify({ error: "Invalid order" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   }
 
-  const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+  const supabaseUrl = Deno.env.get("SUPABASE_URL");
+  const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!supabaseUrl || !serviceRoleKey) {
+    return new Response(JSON.stringify({ error: "Supabase server configuration is incomplete" }), { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  }
+  const supabase = createClient(supabaseUrl, serviceRoleKey);
   const { data: order, error } = await supabase.from("service_orders").insert({ name, email, urgency, message }).select().single();
   if (error) return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } });
 
   const urgencyLabel = urgency === "urgent" ? "URGENT" : urgency === "soon" ? "Soon" : "Planned";
-  const resend = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${Deno.env.get("RESEND_API_KEY")}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from: Deno.env.get("RESEND_FROM_EMAIL"),
-      to: [Deno.env.get("ORDER_TO_EMAIL")],
-      subject: `[${urgencyLabel}] New GreenVolt service request`,
-      text: `Name: ${name}\nEmail: ${email}\nUrgency: ${urgencyLabel}\n\n${message || "(No details provided)"}`,
-    }),
-  });
-  if (!resend.ok) return new Response(JSON.stringify({ error: "Order saved but email notification failed", orderId: order.id }), { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  const resendKey = Deno.env.get("RESEND_API_KEY");
+  const fromEmail = Deno.env.get("RESEND_FROM_EMAIL");
+  const toEmail = Deno.env.get("ORDER_TO_EMAIL");
+  if (!resendKey || !fromEmail || !toEmail) {
+    return new Response(JSON.stringify({ error: "Order saved but email configuration is incomplete", orderId: order.id }), { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  }
+  let resend: Response;
+  try {
+    resend = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [toEmail],
+        subject: `[${urgencyLabel}] New GreenVolt service request`,
+        text: `Name: ${name}\nEmail: ${email}\nUrgency: ${urgencyLabel}\n\n${message || "(No details provided)"}`,
+      }),
+    });
+  } catch (emailError) {
+    console.error("Resend request failed", emailError);
+    return new Response(JSON.stringify({ error: "Order saved but email provider could not be reached", orderId: order.id }), { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  }
+  if (!resend.ok) {
+    const resendError = await resend.text();
+    console.error("Resend rejected email", resend.status, resendError);
+    return new Response(JSON.stringify({ error: "Order saved but email notification failed", providerStatus: resend.status, providerMessage: resendError, orderId: order.id }), { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  }
   return new Response(JSON.stringify({ ok: true, orderId: order.id }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
 });
