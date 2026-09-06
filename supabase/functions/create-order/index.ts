@@ -9,7 +9,14 @@ Deno.serve(async (request) => {
   if (request.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers: corsHeaders });
 
-  const { name, email, urgency, message } = await request.json();
+  let payload: { name?: string; email?: string; urgency?: string; message?: string };
+  try {
+    payload = await request.json();
+  } catch (parseError) {
+    console.error("Invalid order JSON", parseError);
+    return new Response(JSON.stringify({ error: "Request body must be valid JSON" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  }
+  const { name, email, urgency, message } = payload;
   if (!name || !email || !["normal", "soon", "urgent"].includes(urgency)) {
     return new Response(JSON.stringify({ error: "Invalid order" }), { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   }
